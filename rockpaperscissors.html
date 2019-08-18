@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let computerPlay = () => {
+            let value = Math.random()
+            
+            if (value>0.66) {
+                return "rock";
+            } else if (value<0.66 && value >0.33) {
+                return "paper";
+            } else {
+                return "scissors";
+            }
+        };
+        let playround = (computerSelection, playerSelection) => {
+            playerSelection = playerSelection.toLowerCase();
+            
+            if (!(playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors")) {
+                console.log("Invalid choice!");
+            } else if (computerSelection === playerSelection) {
+                console.log("It's a draw!");
+            } else if ((computerSelection === "rock" && playerSelection === "paper") ||
+                    (computerSelection === "paper" && playerSelection === "scissors") ||
+                    (computerSelection === "scissors" && playerSelection === "rock")) {
+                console.log("Player wins!");
+            } else {
+                console.log("Computer wins!");
+            }
+        };
+
+    </script>
+</body>
+</html>
